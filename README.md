@@ -16,8 +16,8 @@ Fork this repository
 
 Click on the folder named "folder", and then "index.html". Go to line 206, it should have something like this:
 
-`
-var codes = [
+
+`var codes = [
 
             { code: 'ABC123', coordinates: 'Example' },
             
@@ -25,8 +25,7 @@ var codes = [
             
             { code: 'GHI789', coordinates: 'Example' },
             
-        ];
-        `
+        ];`
 
 # Step 3:
 
