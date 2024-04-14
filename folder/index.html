@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
     <link rel="manifest" href="/icon/site.webmanifest">
-    <title>Redeem a Token</title>
+    <title>Token Redemption</title>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -17,6 +17,7 @@
         }
 
         header {
+            position: relative;
             background-color: #2e7d32;
             color: #fff;
             padding: 1rem;
@@ -154,62 +155,71 @@
             width: 100%;
             display: none;
         }
-        .question {
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 2rem;
-        }
-        .made-by {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 4rem;
-            border-top: 1px solid #ccc;
-            padding-top: 2rem;
-        }
+
         .dark-mode-toggle {
-          position: fixed;
-          top: 10px;
-          right: 10px;
-          background-color: transparent;
-          border: none;
-          font-size: 1.5rem;
-          cursor: pointer;
-          color: #666;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
         }
 
         body.dark {
-          background-color: #333;
-          color: #fff;
+            background-color: #333;
+            color: #fff;
         }
 
         body.dark header,
         body.dark main,
         body.dark footer {
-          background-color: #222;
+            background-color: #222;
         }
 
         body.dark input[type="text"],
         body.dark button {
-          background-color: #444;
-          color: #fff;
-          border-color: #666;
+            background-color: #444;
+            color: #fff;
+            border-color: #666;
         }
 
         body.dark button:hover {
-          background-color: #555;
+            background-color: #555;
+        }
+
+        body.dark .dark-mode-toggle {
+            color: #fff;
+        }
+
+        body.dark .sun-icon {
+            display: none;
+        }
+
+        body.dark .moon-icon {
+            display: inline-block;
+        }
+
+        .sun-icon {
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .moon-icon {
+            display: none;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Token Redemption</h1>
+        <div class="dark-mode-toggle">
+            <i class="sun-icon fa fa-sun"></i>
+            <i class="moon-icon fa fa-moon"></i>
+        </div>
     </header>
     <main>
-        <button id="dark-mode-toggle" class="dark-mode-toggle">
-          <i class="fa fa-sun"></i>
-        </button>
         <div id="info">
             <p>Nothing here yet...</p>
         </div>
@@ -226,18 +236,20 @@
         </div>
     </main>
     <footer>
-        Made by FlowerSpider
     </footer>
     <script>
         var codes = [
             { code: 'ABC123', coordinates: '37.7749° N, 122.4194° W' },
             { code: 'DEF456', coordinates: '40.7128° N, 74.0060° W' },
-            { code: 'GHI789', coordinates: '51.5074° N, 0.1278° W' }
+            { code: 'GHI789', coordinates: '51.5074° N, 0.1278°W' }
         ];
 
         document.addEventListener('DOMContentLoaded', function () {
             var popup = document.getElementById('popup');
             var closeButton = document.querySelector('#popup .close-button');
+            var darkModeToggle = document.querySelector('body.dark .dark-mode-toggle');
+            var sunIcon = document.querySelector('.sun-icon');
+            var moonIcon = document.querySelector('.moon-icon');
 
             // Close pop-up when clicked on closebutton
             closeButton.addEventListener('click', function () {
@@ -262,37 +274,34 @@
                     document.getElementById('code').value = '';
                 }
             });
-    </script>
-    <script>// ...
-        document.addEventListener('DOMContentLoaded', function () {
-            // ...
-            // Listen for click event on copy button
-            document.querySelector('#popup .copy-button').addEventListener('click', function () {
-                var coordinates = document.getElementById('coordinates').textContent;
-                navigator.clipboard.writeText(coordinates).then(function () {
-                    alert('Coordinates copied to clipboard!');
-                }, function (err) {
-                    console.error('Failed to copy coordinates to clipboard:', err);
-                });
+
+            // Listen for click event on dark mode toggle button
+            darkModeToggle.addEventListener('click', function () {
+                document.body.classList.toggle('dark');
+                if (document.body.classList.contains('dark')) {
+                    sunIcon.style.display = 'none';
+                    moonIcon.style.display = 'inline-block';
+                } else {
+                    sunIcon.style.display = 'inline-block';
+                    moonIcon.style.display = 'none';
+                }
             });
-            // ...
+
+            // Initialize clipboard.js
+            var clipboard = new ClipboardJS('.copy-button');
+
+            // Listen for clipboard success event
+            clipboard.on('success', function (e) {
+                alert('Coordinates copied to clipboard!');
+                e.clearSelection();
+            });
+
+            // Listen for clipboard error event
+            clipboard.on('error', function (e) {
+                console.error('Failed to copy coordinates to clipboard:', e);
+            });
         });
     </script>
-    <script> 
-    document.addEventListener('DOMContentLoaded', function () {
-  var toggleButton = document.getElementById('dark-mode-toggle');
-
-  toggleButton.addEventListener('click', function () {
-    document.body.classList.toggle('dark');
-    if (document.body.classList.contains('dark')) {
-      toggleButton.innerHTML = '<i class="fa fa-moon"></i>';
-    } else {
-      toggleButton.innerHTML = '<i class="fa fa-sun"></i>';
-    }
-  });
-});    
-    </script>
-    
     <h2 class="question">Have any questions? Feel free to ask</h2>
     <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
 <div class="commonninja_component pid-8241b5fb-7313-43be-a4fa-771fe4c29e41"></div>
