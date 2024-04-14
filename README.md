@@ -14,7 +14,9 @@ Fork this repository
 
 # Step 2:
 
-Click on the folder named "folder", and then "index.html". Go to line 206, it should have something like this: `var codes = [
+Click on the folder named "folder", and then "index.html". Go to line 206, it should have something like this:
+
+`var codes = [
             { code: 'ABC123', coordinates: 'Example' },
             { code: 'DEF456', coordinates: 'Example' },
             { code: 'GHI789', coordinates: 'Example' },
