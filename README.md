@@ -6,8 +6,6 @@
 
 [![Star Wars fonts](https://see.fontimg.com/api/renderfont4/ow394/eyJyIjoiZnMiLCJoIjoxNywidyI6MTAwMCwiZnMiOjE3LCJmZ2MiOiIjRjgxNTE1IiwiYmdjIjoiI0ZGRkVGRSIsInQiOjF9/Rm9sbG93IHRoaXMgdHV0b3JpYWwgaWYgeW91IHdvdWxkIGxpa2UgdG8gbWFrZSB5b3VyIG93biBzaXRlOg/oliciy.png)](https://www.fontspace.com/category/star-wars)
 
-Notice: Please read the license
-
 # Step 1:
 
 Fork this repository
