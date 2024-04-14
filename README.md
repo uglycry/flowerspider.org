@@ -6,10 +6,20 @@
 
 [![Star Wars fonts](https://see.fontimg.com/api/renderfont4/ow394/eyJyIjoiZnMiLCJoIjoxNywidyI6MTAwMCwiZnMiOjE3LCJmZ2MiOiIjRjgxNTE1IiwiYmdjIjoiI0ZGRkVGRSIsInQiOjF9/Rm9sbG93IHRoaXMgdHV0b3JpYWwgaWYgeW91IHdvdWxkIGxpa2UgdG8gbWFrZSB5b3VyIG93biBzaXRlOg/oliciy.png)](https://www.fontspace.com/category/star-wars)
 
+Notice: Please read the license
+
 # Step 1:
 
 Fork this repository
 
 # Step 2:
 
-Click on the folder named "folder", and then "index.html". Go to where it says; `
+Click on the folder named "folder", and then "index.html". Go to line 206, it should have something like this: `var codes = [
+            { code: 'ABC123', coordinates: 'Example' },
+            { code: 'DEF456', coordinates: 'Example' },
+            { code: 'GHI789', coordinates: 'Example' },
+        ];`
+
+# Step 3:
+
+Change the values to whatever you want. To add another one, simply hit the enter key and then add another line like that. There can be an infinite amount.
