@@ -179,7 +179,7 @@
             <p>Nothing here yet...</p>
         </div>
         <form id="redeemForm">
-            <input type="text" id="code" placeholder="Enter your token code here">
+            <input type="text" id="code" placeholder="Enter code...">
             <button type="submit">Redeem Token
             </button>
         </form>
@@ -204,9 +204,10 @@
 </script>
     <script>
         var codes = [
-            { code: 'ABC123', coordinates: '37.7749° N, 122.4194° W' },
-            { code: 'DEF456', coordinates: '40.7128° N, 74.0060° W' },
-            { code: 'GHI789', coordinates: '51.5074° N, 0.1278° W' }
+            { code: 'ABC123', coordinates: 'Test Location' },
+            { code: 'DEF456', coordinates: 'Test Location' },
+            { code: 'GHI789', coordinates: 'Test Location' },
+            { code: 'secret123', coordinates: 'This is a test, Charlie Jepperson' },
         ];
 
         document.addEventListener('DOMContentLoaded', function () {
